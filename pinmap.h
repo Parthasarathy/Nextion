@@ -304,20 +304,131 @@ void SetInitialPinStatusPage2(){
 
 void ActOnPinStatusChange(struct DigitalInput input, struct sPinInfo pinmap[], bool invert_pin_10_12){
     
-    if(input.p0 != pinmap[0].state){  pinmap[0].btnnumber.setValue(input.p0);   pinmap[0].state=input.p0; }
-    if(input.p1 != pinmap[1].state){  pinmap[1].btnnumber.setValue(input.p1);   pinmap[1].state=input.p1; }
-    if(input.p2 != pinmap[2].state){  pinmap[2].btnnumber.setValue(input.p2);   pinmap[2].state=input.p2; }
-    if(input.p3 != pinmap[3].state){  pinmap[3].btnnumber.setValue(input.p3);   pinmap[3].state=input.p3; }
-    if(input.p4 != pinmap[4].state){  pinmap[4].btnnumber.setValue(input.p4);   pinmap[4].state=input.p4; }
-    if(input.p5 != pinmap[5].state){  pinmap[5].btnnumber.setValue(input.p5);   pinmap[5].state=input.p5; }
-    if(input.p6 != pinmap[6].state){  pinmap[6].btnnumber.setValue(input.p6);   pinmap[6].state=input.p6; }
-    if(input.p7 != pinmap[7].state){  pinmap[7].btnnumber.setValue(input.p7);   pinmap[7].state=input.p7; }
-    if(input.p8 != pinmap[8].state){  pinmap[8].btnnumber.setValue(input.p8);   pinmap[8].state=input.p8; }
-    if(input.p9 != pinmap[9].state){  pinmap[9].btnnumber.setValue(input.p9);   pinmap[9].state=input.p9; }
-    if(input.p11 != pinmap[11].state){  pinmap[11].btnnumber.setValue(input.p11);   pinmap[11].state=input.p11; }
-    if(input.p13 != pinmap[13].state){  pinmap[13].btnnumber.setValue(input.p13);   pinmap[13].state=input.p13; }
-    if(input.p14 != pinmap[14].state){  pinmap[14].btnnumber.setValue(input.p14);   pinmap[14].state=input.p14; }
-    if(input.p15 != pinmap[15].state){  pinmap[15].btnnumber.setValue(input.p15);   pinmap[15].state=input.p15; }
+    if(input.p0 != pinmap[0].state){
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(0);
+        Serial.print("  old State:");
+        Serial.print(pinmap[0].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p0);   
+        pinmap[0].btnnumber.setValue(input.p0);   pinmap[0].state=input.p0; }
+    if(input.p1 != pinmap[1].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(1);
+        Serial.print("  old State:");
+        Serial.print(pinmap[1].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p1); 
+        pinmap[1].btnnumber.setValue(input.p1);   pinmap[1].state=input.p1; }
+    if(input.p2 != pinmap[2].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(2);
+        Serial.print("  old State:");
+        Serial.print(pinmap[2].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p2); 
+        pinmap[2].btnnumber.setValue(input.p2);   pinmap[2].state=input.p2; }
+    if(input.p3 != pinmap[3].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(3);
+        Serial.print("  old State:");
+        Serial.print(pinmap[3].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p3); 
+        pinmap[3].btnnumber.setValue(input.p3);   pinmap[3].state=input.p3; }
+    if(input.p4 != pinmap[4].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(4);
+        Serial.print("  old State:");
+        Serial.print(pinmap[4].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p4); 
+        pinmap[4].btnnumber.setValue(input.p4);   pinmap[4].state=input.p4; }
+    if(input.p5 != pinmap[5].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(5);
+        Serial.print("  old State:");
+        Serial.print(pinmap[5].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p5); 
+        pinmap[5].btnnumber.setValue(input.p5);   pinmap[5].state=input.p5; }
+    if(input.p6 != pinmap[6].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(6);
+        Serial.print("  old State:");
+        Serial.print(pinmap[6].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p6); 
+        pinmap[6].btnnumber.setValue(input.p6);   pinmap[6].state=input.p6; }
+    if(input.p7 != pinmap[7].state){          Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(7);
+        Serial.print("  old State:");
+        Serial.print(pinmap[7].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p7); 
+        pinmap[7].btnnumber.setValue(input.p7);   pinmap[7].state=input.p7; }
+    if(input.p8 != pinmap[8].state){          
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(8);
+        Serial.print("  old State:");
+        Serial.print(pinmap[8].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p8); 
+        pinmap[8].btnnumber.setValue(input.p8);   pinmap[8].state=input.p8; }
+    if(input.p9 != pinmap[9].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(9);
+        Serial.print("  old State:");
+        Serial.print(pinmap[9].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p9); 
+        pinmap[9].btnnumber.setValue(input.p9);   pinmap[9].state=input.p9; }
+    if(input.p11 != pinmap[11].state){          
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(11);
+        Serial.print("  old State:");
+        Serial.print(pinmap[11].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p11); 
+        pinmap[11].btnnumber.setValue(input.p11);   pinmap[11].state=input.p11; }
+    if(input.p13 != pinmap[13].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(13);
+        Serial.print("  old State:");
+        Serial.print(pinmap[13].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p13); 
+        pinmap[13].btnnumber.setValue(input.p13);   pinmap[13].state=input.p13; }
+    if(input.p14 != pinmap[14].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(14);
+        Serial.print("  old State:");
+        Serial.print(pinmap[14].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p14); 
+        pinmap[14].btnnumber.setValue(input.p14);   pinmap[14].state=input.p14; }
+    if(input.p15 != pinmap[15].state){  
+        Serial.println("");
+        Serial.print("Update for Pin:");
+        Serial.print(15);
+        Serial.print("  old State:");
+        Serial.print(pinmap[15].state);        
+        Serial.print("  Current State:");
+        Serial.print(input.p15); 
+        pinmap[15].btnnumber.setValue(input.p15);   pinmap[15].state=input.p15; }
     
     if(invert_pin_10_12){
         uint8_t inverted= input.p10 ? 0 : 1;
@@ -341,14 +452,16 @@ void ProcessPins()
       bool statechaged=false;
       int buttonState =digitalRead(GPMap[pin_index].pin);
       if(buttonState != GPMap[pin_index].state){
-        GPMap[pin_index].btnnumber.setValue(buttonState);
-        GPMap[pin_index].state=buttonState;
-        statechaged=true;  
         Serial.println("");
         Serial.print("Update for Pin:");
         Serial.print(pin_index);
-        Serial.print("  State:");
-        Serial.print(buttonState);
+        Serial.print("  old State:");
+        Serial.print(GPMap[pin_index].state);        
+        Serial.print("  Current State:");
+        Serial.print(buttonState);        
+        GPMap[pin_index].btnnumber.setValue(buttonState);
+        GPMap[pin_index].state=buttonState;
+        statechaged=true;  
       }
       if(statechaged)
         SetStatusText();
