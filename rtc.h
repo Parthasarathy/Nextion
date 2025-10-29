@@ -238,7 +238,7 @@ void InitializeRTC()
   Page3_bt_setTime.attachPop(setTimePopCallback, &Page3_bt_setTime);
 }
 
-#define RTC_TIMEOUT 800
+#define RTC_TIMEOUT 1000
 volatile uint16_t rct_counter=0;
 
 void RTCHandler()
@@ -250,18 +250,12 @@ void RTCHandler()
     String timeStamp = time.timestamp(DateTime::TIMESTAMP_TIME);
     formattedTime = timeStamp.c_str();
     
-    if(Current_Page==1){
-      Page1_displayDate.setText(dt);
-      Page1_displayTime.setText(formattedTime);
-    }
-    else if(Current_Page==2){
-      Page2_displayDate.setText(dt);
-      Page2_displayTime.setText(formattedTime);
-    }
-    else if(Current_Page==3){
-      Page3_displayDate.setText(dt);
-      Page3_displayTime.setText(formattedTime);
-    }
+    Page1_displayDate.setText(dt);
+    Page1_displayTime.setText(formattedTime);
+    Page2_displayDate.setText(dt);
+    Page2_displayTime.setText(formattedTime);
+    Page3_displayDate.setText(dt);
+    Page3_displayTime.setText(formattedTime);
 
     rct_counter=0;
   }

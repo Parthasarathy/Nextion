@@ -1,7 +1,7 @@
 #define MAX_BUTTON  16
 #define GP_MAX_BUTTON  4
 
-struct sPinInfo{
+__attribute__((packed)) struct sPinInfo{
   NexNumber  btnnumber;
   int pin; 
   int state;

@@ -10,9 +10,10 @@ void setup()
 
 void loop()
 {
+  PinToDisplay();
   //TestPins();
-  ProcessPins();
+  //ProcessPins();
   EStop_Effect();
   RTCHandler();
-  nexLoop(nex_listen_list);
+  //nexLoop(nex_listen_list);
 }

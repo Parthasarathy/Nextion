@@ -492,8 +492,95 @@ void EStop_Effect(){
    }
 }
 
+
+NexNumber  btnnumber0p1 = NexNumber(2,4,"bt_2_ei0_p1_00");
+NexNumber  btnnumber1p1 =NexNumber(2,5,"bt_2_ei1_p1_01");
+NexNumber  btnnumber2p1 = NexNumber(2,6,"bt_2_ei2_p1_02");
+NexNumber  btnnumber3p1 = NexNumber(2,7,"bt_2_ei3_p1_03");
+NexNumber  btnnumber4p1 = NexNumber(2,8,"bt_2_ei4_p1_04");
+NexNumber  btnnumber5p1 = NexNumber(2,9,"bt_2_ei5_p1_05");
+NexNumber  btnnumber6p1 = NexNumber(2,10,"bt_2_ei6_p1_06");
+NexNumber  btnnumber7p1 = NexNumber(2,11,"bt_2_ei7_p1_07");
+NexNumber  btnnumber8p1 = NexNumber(2,12,"bt_2_ei8_p1_08");
+NexNumber  btnnumber9p1 = NexNumber(2,13,"bt_2_ei9_p1_09");
+NexNumber  btnnumber10p1 = NexNumber(2,14,"bt_2_eo0_p1_10");
+NexNumber  btnnumber11p1= NexNumber(2,15,"bt_2_eo1_p1_11");
+NexNumber  btnnumber12p1 = NexNumber(2,16,"bt_2_eo2_p1_12");
+NexNumber  btnnumber13p1 = NexNumber(2,17,"bt_2_eo3_p1_13");
+NexNumber  btnnumber14p1 = NexNumber(2,18,"bt_2_eo4_p1_14");
+NexNumber  btnnumber15p1 = NexNumber(2,19,"bt_2_eo5_p1_15");
+
+NexNumber  btnnumber0p2 = NexNumber(2,20,"bt_2_eo6_p2_00");
+NexNumber  btnnumber1p2 =NexNumber(2,21,"bt_2_eo7_p2_01");
+NexNumber  btnnumber2p2 =NexNumber(2,22,"bt_2_eo8_p2_02");
+NexNumber  btnnumber3p2 =NexNumber(2,23,"bt_2_eo9_p2_03");
+NexNumber  btnnumber4p2 =NexNumber(1,2,"bt_1_st0_p2_04");
+NexNumber  btnnumber5p2 =NexNumber(1,3,"bt_1_sp1_p2_05");
+NexNumber  btnnumber6p2 =NexNumber(1,4,"bt_1_di2_p2_06");
+NexNumber  btnnumber7p2 =NexNumber(1,5,"bt_1_di3_p2_07");
+NexNumber  btnnumber8p2 =NexNumber(1,6,"bt_1_di4_p2_08");
+NexNumber  btnnumber9p2 =NexNumber(1,7,"bt_1_di5_p2_09");
+NexNumber  btnnumber10p2 =NexNumber(1,14,"bt_1_mp0_p2_10");
+NexNumber  btnnumber11p2 =NexNumber(1,8,"bt_1_do1_p2_11");
+NexNumber  btnnumber12p2 =NexNumber(1,9,"bt_1_do2_p2_12");
+NexNumber  btnnumber13p2 =NexNumber(1,10,"bt_1_do3_p2_13");
+NexNumber  btnnumber14p2 =NexNumber(1,11,"bt_1_do4_p2_14");
+NexNumber  btnnumber15p2 =NexNumber(1,12,"bt_1_do5_p2_15");
+
+NexNumber  btnnumber0gp =NexNumber(1,17,"bt_1_bi0_uc_34");
+NexNumber  btnnumber1gp =NexNumber(1,18,"bt_1_bi1_uc_35");
+NexNumber  btnnumber2gp =NexNumber(1,19,"bt_1_bi2_uc_36");
+NexNumber  btnnumber3gp =NexNumber(1,22,"bt_1_emg_uc_32");
+
+void PinToDisplay(){
+    struct DigitalInput inputs=  digitalReadAll(MegaPinMap1);
+    btnnumber0p1.setValue(inputs.p0);
+    btnnumber1p1.setValue(inputs.p1);
+    btnnumber2p1.setValue(inputs.p2);
+    btnnumber3p1.setValue(inputs.p3);
+    btnnumber4p1.setValue(inputs.p4);
+    btnnumber5p1.setValue(inputs.p5);
+    btnnumber6p1.setValue(inputs.p6);
+    btnnumber7p1.setValue(inputs.p7);
+    btnnumber8p1.setValue(inputs.p8);
+    btnnumber9p1.setValue(inputs.p9);
+    btnnumber10p1.setValue(inputs.p10);
+    btnnumber11p1.setValue(inputs.p11);
+    btnnumber12p1.setValue(inputs.p12);
+    btnnumber13p1.setValue(inputs.p13);
+    btnnumber14p1.setValue(inputs.p14);
+    btnnumber15p1.setValue(inputs.p15);
+
+    inputs=  digitalReadAll(MegaPinMap2);
+    btnnumber0p2.setValue(inputs.p0);
+    btnnumber1p2.setValue(inputs.p1);
+    btnnumber2p2.setValue(inputs.p2);
+    btnnumber3p2.setValue(inputs.p3);
+    btnnumber4p2.setValue(inputs.p4);
+    btnnumber5p2.setValue(inputs.p5);
+    btnnumber6p2.setValue(inputs.p6);
+    btnnumber7p2.setValue(inputs.p7);
+    btnnumber8p2.setValue(inputs.p8);
+    btnnumber9p2.setValue(inputs.p9);
+    btnnumber10p2.setValue(inputs.p10);
+    btnnumber11p2.setValue(inputs.p11);
+    btnnumber12p2.setValue(inputs.p12);
+    btnnumber13p2.setValue(inputs.p13);
+    btnnumber14p2.setValue(inputs.p14);
+    btnnumber15p2.setValue(inputs.p15);
+
+    btnnumber0gp.setValue(digitalRead(GPMap[0].pin));
+    btnnumber1gp.setValue(digitalRead(GPMap[1].pin));
+    btnnumber2gp.setValue(digitalRead(GPMap[2].pin));
+    btnnumber3gp.setValue(digitalRead(GPMap[3].pin));
+
+    SetStatusText();
+}
+
 void TestPins(){
 
+NexNumber  btnnumber8 =NexNumber(2,12,"bt_2_ei8_p1_08");
+NexNumber  btnnumber9 =NexNumber(2,12,"bt_2_ei9_p1_09");
     struct DigitalInput inputs=  digitalReadAll(MegaPinMap1);
     Serial.println("********************************");
     Serial.println("PCF 1 :");
@@ -506,14 +593,14 @@ void TestPins(){
     Serial.print("6 : ");   Serial.println(inputs.p6); MegaPinMap1[6].btnnumber.setValue(inputs.p6);
     Serial.print("7 : ");   Serial.println(inputs.p7); MegaPinMap1[7].btnnumber.setValue(inputs.p7);
     Serial.print("8 : ");   Serial.println(inputs.p8); MegaPinMap1[8].btnnumber.setValue(inputs.p8);
-    Serial.print("9 : ");   Serial.println(inputs.p9); MegaPinMap1[9].btnnumber.setValue(inputs.p9);
+    Serial.print("9 : ");   Serial.println(inputs.p9); MegaPinMap1[9].btnnumber.setValue(inputs.p9);    
     Serial.print("10 : ");   Serial.println(inputs.p10); MegaPinMap1[10].btnnumber.setValue(inputs.p10);
     Serial.print("11 : ");   Serial.println(inputs.p11); MegaPinMap1[11].btnnumber.setValue(inputs.p11);
     Serial.print("12 : ");   Serial.println(inputs.p12); MegaPinMap1[12].btnnumber.setValue(inputs.p12);
     Serial.print("13 : ");   Serial.println(inputs.p13); MegaPinMap1[13].btnnumber.setValue(inputs.p13);
     Serial.print("14 : ");   Serial.println(inputs.p14); MegaPinMap1[14].btnnumber.setValue(inputs.p14);
     Serial.print("15 : ");   Serial.println(inputs.p15); MegaPinMap1[15].btnnumber.setValue(inputs.p15);
-    delay(1000);
+    //delay(1000);
     Serial.println("-------------------------------");
     inputs=  digitalReadAll(MegaPinMap2);
     Serial.println("PCF 2 :");
@@ -533,7 +620,7 @@ void TestPins(){
     Serial.print("13 : ");   Serial.println(inputs.p13); MegaPinMap2[13].btnnumber.setValue(inputs.p13);
     Serial.print("14 : ");   Serial.println(inputs.p14); MegaPinMap2[14].btnnumber.setValue(inputs.p14);
     Serial.print("15 : ");   Serial.println(inputs.p15); MegaPinMap2[15].btnnumber.setValue(inputs.p15);
-    delay(1000);
+    //delay(1000);
     Serial.println("-------------------------------");
     Serial.println("GPIO :");
     Serial.print("BT12 : ");   Serial.println(digitalRead(GPMap[0].pin)); GPMap[0].btnnumber.setValue(digitalRead(GPMap[0].pin));
@@ -541,5 +628,5 @@ void TestPins(){
     Serial.print("BT14 : ");   Serial.println(digitalRead(GPMap[2].pin)); GPMap[2].btnnumber.setValue(digitalRead(GPMap[2].pin));
     Serial.print("BT15 : ");   Serial.println(digitalRead(GPMap[3].pin)); GPMap[3].btnnumber.setValue(digitalRead(GPMap[3].pin)); 
     SetStatusText();
-    delay(1000);
+    //delay(1000);
 }
