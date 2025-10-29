@@ -445,8 +445,10 @@ void ActOnPinStatusChange(struct DigitalInput input, struct sPinInfo pinmap[], b
 
 void ProcessPins()
 {
-    ActOnPinStatusChange(digitalReadAll(MegaPinMap1), MegaPinMap1, false);
-    ActOnPinStatusChange(digitalReadAll(MegaPinMap2), MegaPinMap2, true);
+    struct DigitalInput inputs=  digitalReadAll(MegaPinMap1);
+    ActOnPinStatusChange(inputs, MegaPinMap1, false);
+    inputs=  digitalReadAll(MegaPinMap2);
+    ActOnPinStatusChange(inputs, MegaPinMap2, true);
 
     for(int pin_index=0;pin_index<GP_MAX_BUTTON;pin_index++){
       bool statechaged=false;
