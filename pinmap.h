@@ -536,8 +536,8 @@ NexNumber  btnnumber3gp =NexNumber(1,22,"bt_1_emg_uc_32");
 void PinToDisplay(){
     Serial.println("Reading Digital 1:");
     struct DigitalInput inputs=  digitalReadAll(MegaPinMap1);
-    
     Serial.println("Completed Digital 1:");
+
     Serial.println("Start Nextion Write 1:");
     btnnumber0p1.setValue(inputs.p0);
     btnnumber1p1.setValue(inputs.p1);
@@ -555,10 +555,13 @@ void PinToDisplay(){
     btnnumber13p1.setValue(inputs.p13);
     btnnumber14p1.setValue(inputs.p14);
     btnnumber15p1.setValue(inputs.p15);
-    Serial.println("Stop Nextion Write 1:");
+    Serial.println("Stopped Nextion Write 1:");
 
     Serial.println("Reading Digital 2:");
     inputs=  digitalReadAll(MegaPinMap2);
+    Serial.println("Completed Digital 2:");
+    
+    Serial.println("Start Nextion Write 2:");    
     btnnumber0p2.setValue(inputs.p0);
     btnnumber1p2.setValue(inputs.p1);
     btnnumber2p2.setValue(inputs.p2);
@@ -580,7 +583,7 @@ void PinToDisplay(){
     btnnumber1gp.setValue(digitalRead(GPMap[1].pin));
     btnnumber2gp.setValue(digitalRead(GPMap[2].pin));
     btnnumber3gp.setValue(digitalRead(GPMap[3].pin));
-    Serial.println("Completed Digital 2:");
+    Serial.println("Stopped Nextion Write 2:");
 
     SetStatusText();
 }
