@@ -119,21 +119,22 @@ void InitializePins(){
 
     pinMode(RESET_PIN, OUTPUT);
     pinMode(READY_PIN, OUTPUT);
-    SetInitialPinStatus(digitalReadAll(MegaPinMap1), MegaPinMap1, false);
-    SetInitialPinStatus(digitalReadAll(MegaPinMap2), MegaPinMap2, true);
-    SetInitialPinStatusGPIO();
+  
+    // SetInitialPinStatus(digitalReadAll(MegaPinMap1), MegaPinMap1, false);
+    // SetInitialPinStatus(digitalReadAll(MegaPinMap2), MegaPinMap2, true);
+    // SetInitialPinStatusGPIO();
     
-    b_1_rst_uc_25.attachPop(b_1_rst_uc_25_Callback, &b_1_rst_uc_25);
+    // b_1_rst_uc_25.attachPop(b_1_rst_uc_25_Callback, &b_1_rst_uc_25);
     
-    b_pg1_nxt.attachPush(page_invalidate_Callback_b_pg1_nxt, &b_pg1_nxt);
-    b_pg2_back.attachPush(page_invalidate_Callback_b_pg2_back, &b_pg2_back);
-    b_pg2_nxt.attachPush(page_invalidate_Callback_b_pg2_nxt, &b_pg2_nxt);
-    b_pg3_back.attachPush(page_invalidate_Callback_b_pg3_back, &b_pg3_back);
-    b_pg3_home.attachPush(page_invalidate_Callback_b_pg3_home, &b_pg3_home);
+    // b_pg1_nxt.attachPush(page_invalidate_Callback_b_pg1_nxt, &b_pg1_nxt);
+    // b_pg2_back.attachPush(page_invalidate_Callback_b_pg2_back, &b_pg2_back);
+    // b_pg2_nxt.attachPush(page_invalidate_Callback_b_pg2_nxt, &b_pg2_nxt);
+    // b_pg3_back.attachPush(page_invalidate_Callback_b_pg3_back, &b_pg3_back);
+    // b_pg3_home.attachPush(page_invalidate_Callback_b_pg3_home, &b_pg3_home);
     
-    page1.attachPop(page1_invalidate_Callback);
-    page2.attachPop(page2_invalidate_Callback);
-    page3.attachPop(page3_invalidate_Callback);
+    // page1.attachPop(page1_invalidate_Callback);
+    // page2.attachPop(page2_invalidate_Callback);
+    // page3.attachPop(page3_invalidate_Callback);
     
 }
 
@@ -579,8 +580,6 @@ void PinToDisplay(){
 
 void TestPins(){
 
-NexNumber  btnnumber8 =NexNumber(2,12,"bt_2_ei8_p1_08");
-NexNumber  btnnumber9 =NexNumber(2,12,"bt_2_ei9_p1_09");
     struct DigitalInput inputs=  digitalReadAll(MegaPinMap1);
     Serial.println("********************************");
     Serial.println("PCF 1 :");

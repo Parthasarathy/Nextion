@@ -5,7 +5,7 @@ void setup()
   Serial.begin(9600);
   nexSerial.begin(115200);
   InitializePins();
-  InitializeRTC();
+  //InitializeRTC();
 }
 
 void loop()
@@ -14,6 +14,6 @@ void loop()
   //TestPins();
   //ProcessPins();
   EStop_Effect();
-  RTCHandler();
+  //RTCHandler();
   //nexLoop(nex_listen_list);
 }
