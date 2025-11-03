@@ -123,6 +123,7 @@ void setDatePopCallback(void *ptr)
     Page1_displayDate.setText(formattedDate);
     Page2_displayDate.setText(formattedDate);
   }
+  Serial.println("RTC: setDatePopCallback"); 
 }
 
 void setTimePopCallback(void *ptr)
@@ -210,6 +211,8 @@ void setTimePopCallback(void *ptr)
     Page1_displayTime.setText(formattedTime);
     Page2_displayTime.setText(formattedTime);
   }
+
+    Serial.println("RTC: setTimePopCallback"); 
 }
 
 void InitializeRTC()
