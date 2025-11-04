@@ -238,7 +238,7 @@ void InitializeRTC()
   Page3_bt_setTime.attachPop(setTimePopCallback, &Page3_bt_setTime);
 }
 
-#define RTC_TIMEOUT 1000
+#define RTC_TIMEOUT 10
 volatile uint16_t rct_counter=0;
 
 void RTCHandler()

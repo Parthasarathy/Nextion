@@ -169,6 +169,10 @@ void PinToDisplay(){
     btnnumber13p2.setValue(inputs.p13);
     btnnumber14p2.setValue(inputs.p14);
     btnnumber15p2.setValue(inputs.p15);
+
+    btnnumber0gp.setValue(digitalRead(GPMap[0].pin));
+    btnnumber1gp.setValue(digitalRead(GPMap[1].pin));
+    btnnumber2gp.setValue(digitalRead(GPMap[2].pin));
     //Serial.println("Stopped Nextion Write 2:");
     nexLoop(nex_listen_list);
     SetStatusText();
